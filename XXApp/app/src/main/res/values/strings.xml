@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">大学信息在线</string>
+    <string name="login_change">账号切换</string>
+    <string name="login_input_user">手机号/邮箱</string>
+    <string name="login_input_pwd">请输入密码</string>
+    <string name="login_input_pwd_again">请再次输入密码</string>
+    <string name="login_button">登录</string>
+    <string name="register_button">注册</string>
+    <string name="register_title">注册</string>
+    <string name="register_title_right">确定</string>
+    <string name="register_phone">手机号</string>
+    <string name="register_validate_code">验证码</string>
+    <string name="register_get_code">获取验证码</string>
+    <string name="base_exit">再次点击退出</string>
+    <string name="login_account_error">账号格式错误</string>
+    <string name="login_pwd_error">密码格式错误</string>
+    <string name="request_error">网络请求失败</string>
+    <string name="data_load_error">数据加载失败</string>
+    <string name="request_data_format_error">网络请求数据格式错误</string>
+    <string name="request_nodata">数据无返回</string>
+    <string name="Register">注册</string>
+    <string name="Pwd_Reset">重置密码</string>
+    <string name="validateCode_send_success">验证码发送成功</string>
+    <string name="validateCode_send_error">验证码发送失败</string>
+    <string name="validateCode_not_right">验证码不正确</string>
+    <string name="get_code">获取验证码</string>
+    <string name="phone_format_error">手机号格式错误</string>
+</resources>

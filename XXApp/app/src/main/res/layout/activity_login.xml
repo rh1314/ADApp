@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.xxapp.Activites.LoginActivity"
+    android:orientation="vertical">
+<com.xxapp.Views.TitleView
+    android:id="@+id/login_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:tv_title="@string/app_name"
+    app:tv_right="@string/login_change"
+    app:tv_tv_right_visibility="visibility"/>
+
+<com.xxapp.Views.MEditText
+    android:id="@+id/login_user"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_10"
+    android:layout_marginRight="@dimen/margin_10"
+    app:me_del_enable="true"
+    app:me_eye_enable="false"
+    app:me_hint="@string/login_input_user"
+    app:me_inputType="normal"
+    app:me_lable_src="@mipmap/ic_launcher"/>
+
+<com.xxapp.Views.MEditText
+    android:id="@+id/login_pwd"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_10"
+    android:layout_marginRight="@dimen/margin_10"
+    app:me_del_enable="true"
+    app:me_eye_enable="true"
+    app:me_hint="@string/login_input_pwd"
+    app:me_inputType="password"
+    app:me_lable_src="@mipmap/ic_launcher"/>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:background="@drawable/selector_button_bg_red"
+        android:layout_marginTop="@dimen/margin_30"
+        android:textColor="@android:color/white"
+        android:text="@string/login_button"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/login_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Register"
+            android:textSize="@dimen/fontSizeSp_15"
+            android:textColor="@color/colorRed"
+            android:padding="@dimen/paddingTop_10"
+            android:layout_alignParentBottom="true"/>
+        <TextView
+            android:id="@+id/login_reset_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Pwd_Reset"
+            android:textSize="@dimen/fontSizeSp_15"
+            android:textColor="@color/colorRed"
+            android:padding="@dimen/paddingTop_10"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</LinearLayout>
