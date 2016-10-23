@@ -7,6 +7,7 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.xxapp.R;
+import com.xxapp.Utils.Loading;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -24,6 +25,7 @@ public abstract class BaseRequestCallBack<T> extends RequestCallBack<String> {
     }
     @Override
     public void onSuccess(ResponseInfo<String> responseInfo) {
+        Loading.dismiss();
         if (responseInfo!=null){
             String json=responseInfo.result;
             if (json.matches("^\\{.*\\}$")){
@@ -43,6 +45,7 @@ public abstract class BaseRequestCallBack<T> extends RequestCallBack<String> {
 
     @Override
     public void onFailure(HttpException e, String s) {
+        Loading.dismiss();
         XUtils.show(R.string.request_error);
         Log.e("error:",s);
         e.printStackTrace();

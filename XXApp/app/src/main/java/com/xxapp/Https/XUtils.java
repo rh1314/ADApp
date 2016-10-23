@@ -21,8 +21,9 @@ public class XUtils {
     private static Context mContext;
     private static HttpUtils httpUtils;
     private static DbUtils dbUtils;
-    private static final String U="http://localhost:8080/college";
+    private static final String U="http://(ip):8080/college/";
     public static final String LOGIN="login";
+    public static final String REGISTER="register";
     private static HttpHandler handler;
 
     public static void init(Context context){
@@ -54,7 +55,7 @@ public class XUtils {
             //请求都会返回handler
             handler=httpUtils.send(HttpRequest.HttpMethod.GET,U+url,callBack);
         }else{
-            handler=httpUtils.send(HttpRequest.HttpMethod.GET,U+url,params,callBack);
+            handler=httpUtils.send(HttpRequest.HttpMethod.POST,U+url,params,callBack);
         }
     }
 
@@ -64,6 +65,7 @@ public class XUtils {
             handler=null;
         }
     }
+
     //Get请求
     public static <T> void send(String url,RequestCallBack<T> callBack,boolean showLoading){
         send(url,null,callBack,showLoading);

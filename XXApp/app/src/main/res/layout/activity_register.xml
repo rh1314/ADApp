@@ -19,7 +19,7 @@
     app:tv_tv_right_visibility="visibility"/>
 
 <com.xxapp.Views.MEditText
-    android:id="@+id/register_phone"
+    android:id="@+id/register_eamil"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/margin_10"
@@ -42,7 +42,7 @@
     app:me_inputType="password"
     app:me_lable_src="@mipmap/ic_launcher"/>
     <com.xxapp.Views.MEditText
-        android:id="@+id/register_pwd_again"
+        android:id="@+id/register_rePwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_10"

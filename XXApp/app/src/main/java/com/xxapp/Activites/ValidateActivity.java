@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.PersistableBundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
@@ -57,8 +56,8 @@ public class ValidateActivity extends BaseActivity{
         }
     };
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         /*SMSSDK短信验证*/
         SMSSDK.initSDK(this,"181ce1a9b39c5","13e5942b3174b86047b1c21f804dfa97");
         setContentView(R.layout.activity_register_validate);
@@ -73,6 +72,11 @@ public class ValidateActivity extends BaseActivity{
         if (ph!=null){
             phone.setText(ph);
         }
+        /*返回后再次进入，仍显示读秒begin*/
+        if (CodeTimerTask.getInstance().isRun()){
+            CodeTimerTask.getInstance().startTimer(getCode);
+        }
+        /*返回后再次进入，仍显示读秒end*/
     }
 
     private EventHandler eventHandler=new EventHandler(){
@@ -106,6 +110,7 @@ public class ValidateActivity extends BaseActivity{
                         break;
                     case SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE:
                         handler.sendMessage(handler.obtainMessage(1,R.string.validateCode_not_right,1));
+                        Loading.dismiss();
                         break;
                 }
             }

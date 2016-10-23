@@ -20,6 +20,7 @@
         android:paddingTop="@dimen/paddingTop_10"
         android:paddingBottom="@dimen/paddingBottom_3"
         android:hint="请输入"
+        android:lines="1"
         android:layout_marginLeft="@dimen/margin_5"
         />
     <ImageView

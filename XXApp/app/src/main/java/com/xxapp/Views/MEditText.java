@@ -3,6 +3,7 @@ package com.xxapp.Views;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -81,13 +82,24 @@ public class MEditText extends RelativeLayout implements View.OnFocusChangeListe
                     //默认为显示
                     setInputType(array.getInt(index,0));
                     break;
+                case R.styleable.MEditText_me_maxLength:
+                    int max= array.getInt(index,-1);
+                    if (max!=-1){
+                        setMaxLength(max);
+                    }
+                    break;
             }
         }
+    }
+
+    public void setMaxLength(int maxLength){
+        etInput.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
     }
 
     /*设置输入框明文密文begin*/
     public  static final int INPUTTYPE_PASSWORD=1;
     public  static final int INPUTTYPE_NORMAL=0;
+    public  static final int INPUTTYPE_NUMBER=2;
     public void setInputType(int type){
         switch(type){
             case INPUTTYPE_NORMAL:
@@ -95,6 +107,9 @@ public class MEditText extends RelativeLayout implements View.OnFocusChangeListe
                 break;
             case INPUTTYPE_PASSWORD:
                 etInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                break;
+            case INPUTTYPE_NUMBER:
+                etInput.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_VARIATION_NORMAL);
                 break;
         }
     }

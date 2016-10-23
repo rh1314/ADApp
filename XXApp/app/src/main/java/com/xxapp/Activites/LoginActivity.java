@@ -1,15 +1,11 @@
 package com.xxapp.Activites;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
 import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.xxapp.Entities.Result;
@@ -67,7 +63,8 @@ public class LoginActivity extends BaseActivity {
                 ValidateActivity.startActivity(LoginActivity.this,true);
                 break;
             case R.id.login_reset_pwd:
-                ValidateActivity.startActivity(LoginActivity.this,false);
+//                ValidateActivity.startActivity(LoginActivity.this,false);
+                RegisterActivity.startActivity(LoginActivity.this,"18666228953");
                 break;
         }
     }
@@ -87,8 +84,9 @@ public class LoginActivity extends BaseActivity {
             XUtils.show(R.string.login_pwd_error);
             return;
         }
+        params.addBodyParameter("u.pwd",pwd);
         //网络请求
-        XUtils.send(XUtils.LOGIN, new BaseRequestCallBack<Result<UserInfo>>() {
+        XUtils.send(XUtils.LOGIN,params,new BaseRequestCallBack<Result<UserInfo>>() {
             @Override
             public void success(Result<UserInfo> data) {
                 XUtils.show(data.descr);

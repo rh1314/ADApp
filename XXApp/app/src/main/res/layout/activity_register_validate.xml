@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         app:tv_title="@string/app_name"
         app:tv_right="@string/register_title_right"
-        app:tv_tv_right_visibility="visibility"/>
+        app:tv_tv_right_visibility="invisibility"/>
 
     <com.xxapp.Views.MEditText
         android:id="@+id/validatePhone"
@@ -27,8 +27,9 @@
         app:me_del_enable="true"
         app:me_eye_enable="false"
         app:me_hint="@string/register_phone"
-        app:me_inputType="normal"
-        app:me_lable_src="@mipmap/ic_launcher"/>
+        app:me_inputType="number"
+        app:me_lable_src="@mipmap/ic_launcher"
+        app:me_maxLength="11"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeSp_15"
             android:text="@string/register_get_code"
+            android:textColor="@color/selector_button_bg"
             android:gravity="center"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/validateCode"
@@ -59,7 +61,8 @@
             app:me_del_enable="true"
             app:me_eye_enable="false"
             app:me_hint="@string/register_validate_code"
-            app:me_inputType="normal"
+            app:me_maxLength="4"
+            app:me_inputType="number"
             app:me_lable_src="@mipmap/ic_launcher"/>
     </RelativeLayout>
 </LinearLayout>

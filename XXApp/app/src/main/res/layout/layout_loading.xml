@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/shape_loading_bg">
+    android:background="@drawable/shape_loading_bg"
+    android:layout_gravity="center">
 
     <ProgressBar
         android:layout_width="wrap_content"

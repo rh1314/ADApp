@@ -16,6 +16,8 @@ public class CodeTimerTask extends AsyncTask<Void,Void,Void> {
     private CodeTimerTask(){}
     //是否第一次进入
     private static boolean isNew;
+    private boolean isRun;
+
     public static CodeTimerTask getInstance(){
         if (task==null){
             task=new CodeTimerTask();
@@ -34,6 +36,7 @@ public class CodeTimerTask extends AsyncTask<Void,Void,Void> {
     protected void onPreExecute() {
         time=90;
         isNew=false;
+        isRun=true;
     }
 
     @Override
@@ -76,9 +79,15 @@ public class CodeTimerTask extends AsyncTask<Void,Void,Void> {
     //取消
     public void cancelTimer(){
         if (task!=null){
-            task.cancelTimer();
+            isRun=false;
+            //父类取消
+            super.cancel(true);
             task=null;
             isNew=true;
         }
+    }
+
+    public boolean isRun(){
+        return isRun;
     }
 }
