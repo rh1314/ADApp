@@ -131,6 +131,7 @@ public class ValidateActivity extends BaseActivity{
     private MyTextWatcher phoneWatcher=new MyTextWatcher() {
         @Override
         public void afterTextChanged(Editable editable) {
+            Log.i("phone:",editable.toString());
             if (editable.toString().matches(Code.PHONE_MATCH)){
                 getCode.setEnabled(true);
             }else{
@@ -147,6 +148,7 @@ public class ValidateActivity extends BaseActivity{
                     finish();
                     break;
                 case R.id.imgRight:
+                case R.id.txtRight:
                     //提交验证码
                     ph=phone.getText();
                     String code=validateCode.getText();

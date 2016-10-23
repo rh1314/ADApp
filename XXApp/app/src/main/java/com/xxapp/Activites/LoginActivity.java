@@ -13,6 +13,7 @@ import com.xxapp.Entities.UserInfo;
 import com.xxapp.Https.BaseRequestCallBack;
 import com.xxapp.Https.XUtils;
 import com.xxapp.R;
+import com.xxapp.Utils.Code;
 import com.xxapp.Views.MEditText;
 import com.xxapp.Views.TitleView;
 
@@ -69,24 +70,25 @@ public class LoginActivity extends BaseActivity {
         }
     }
     private void login(){
-        String userName=loginUser.getText();
+        String account=loginUser.getText();
         String pwd=loginPwd.getText();
         RequestParams params =new RequestParams();
-        if (userName.matches("^1(3|4|5|7|8)\\d{9}$")){
-            params.addBodyParameter("u.phone",userName);
-        }else if(userName.matches("^\\w+@\\w+\\.(com|cn)(.cn)?$")){
-            params.addBodyParameter("u.email",userName);
+        if (account.matches(Code.PHONE_MATCH)){
+            params.addBodyParameter("Name",account);
+        }else if(account.matches(Code.EMAIL_MATCH)){
+            params.addBodyParameter("Name",account);
         }else{
             XUtils.show(R.string.login_account_error);
             return;
         }
-        if (!pwd.matches("^\\w{6,20}$")){
+        if (!pwd.matches(Code.PWD_MATCH)){
             XUtils.show(R.string.login_pwd_error);
             return;
         }
-        params.addBodyParameter("u.pwd",pwd);
+        params.addBodyParameter("Pwd",pwd);
+        String url=getString(R.string.url_login);
         //网络请求
-        XUtils.send(XUtils.LOGIN,params,new BaseRequestCallBack<Result<UserInfo>>() {
+        XUtils.send(url,null,new BaseRequestCallBack<Result<UserInfo>>() {
             @Override
             public void success(Result<UserInfo> data) {
                 XUtils.show(data.descr);

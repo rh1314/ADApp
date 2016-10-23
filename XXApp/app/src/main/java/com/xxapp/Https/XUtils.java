@@ -21,8 +21,7 @@ public class XUtils {
     private static Context mContext;
     private static HttpUtils httpUtils;
     private static DbUtils dbUtils;
-    private static final String U="http://(ip):8080/college/";
-    public static final String LOGIN="login";
+    public static final String LOGIN="LoginValidate";
     public static final String REGISTER="register";
     private static HttpHandler handler;
 
@@ -53,9 +52,9 @@ public class XUtils {
         }
         if (params==null){
             //请求都会返回handler
-            handler=httpUtils.send(HttpRequest.HttpMethod.GET,U+url,callBack);
+            handler=httpUtils.send(HttpRequest.HttpMethod.GET,url,callBack);
         }else{
-            handler=httpUtils.send(HttpRequest.HttpMethod.POST,U+url,params,callBack);
+            handler=httpUtils.send(HttpRequest.HttpMethod.POST,url,params,callBack);
         }
     }
 
