@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.xxapp.Views.TitleView
+        android:id="@+id/resetPwd_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tv_img_right_visibility="gone"
+        app:tv_img_left_visibility="gone"
+        app:tv_tv_right_visibility="gone"
+        app:tv_title="@string/Pwd_Reset"/>
+        <TextView
+            android:id="@+id/resetPwd_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_10"
+            android:text="邮箱:"
+            android:textSize="@dimen/fontSizeSp_20"
+            android:textColor="@color/colorRed"/>
+        <Button
+            android:id="@+id/resetPwd_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/selector_button_bg_red"
+            android:textColor="@color/selector_button_bg"
+            android:text="发送邮箱"
+            android:textSize="@dimen/fontSizeSp_20"/>
+</LinearLayout>

@@ -5,6 +5,8 @@ package com.xxapp.Entities;
  */
 public class UserInfo {
 
+    public UserInfo(){}
+
     public UserInfo(String account, String pwd) {
         Account = account;
         Pwd = pwd;

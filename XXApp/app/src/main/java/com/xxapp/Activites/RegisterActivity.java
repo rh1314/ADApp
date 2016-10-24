@@ -88,7 +88,7 @@ public class RegisterActivity extends BaseActivity{
         XUtils.send(XUtils.REGISTER, params, new BaseRequestCallBack<Result<Boolean>>() {
             @Override
             public void success(Result<Boolean> data) {
-                XUtils.show(data.descr);
+                XUtils.show(data.msg);
                 if (data.data){
                     //注册页面关闭
                     finish();

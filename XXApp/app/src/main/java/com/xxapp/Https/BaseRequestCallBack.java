@@ -28,7 +28,6 @@ public abstract class BaseRequestCallBack<T> extends RequestCallBack<String> {
         Loading.dismiss();
         if (responseInfo!=null){
             String json=responseInfo.result;
-//            json="[{\"Name\":\"01177950\",\"Pwd\":\"123\",\"Remark\":\"aaddsfa\"}]";
             if (json.matches("^\\{(.+:.+,*){1,}\\}$")){
                 T t=JSON.parseObject(json,type);
                 if(t!=null){

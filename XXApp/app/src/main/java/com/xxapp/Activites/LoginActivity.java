@@ -27,6 +27,7 @@ public class LoginActivity extends BaseActivity {
     @ViewInject(R.id.btnLogin)
     private Button btnLogin;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +66,7 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.login_reset_pwd:
 //                ValidateActivity.startActivity(LoginActivity.this,false);
-                RegisterActivity.startActivity(LoginActivity.this,"18666228953");
+                PwdResetActivity.startActivity(LoginActivity.this,"18666228953");
                 break;
         }
     }
@@ -91,7 +92,7 @@ public class LoginActivity extends BaseActivity {
         XUtils.send(url,null,new BaseRequestCallBack<Result<UserInfo>>() {
             @Override
             public void success(Result<UserInfo> data) {
-                XUtils.show(data.descr);
+                XUtils.show(data.msg);
                 if (data.state==Result.STATE_SUCCESS){
                     ((MyApp)getApplication()).setUserInfo(data.data);
                     //跳转

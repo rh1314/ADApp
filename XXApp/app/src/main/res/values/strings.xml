@@ -29,5 +29,6 @@
     <string name="email_format_error">邮箱格式不正确</string>
     <string name="pwd_format_error">密码格式不正确（6-20位）</string>
     <string name="register_pwd_rePwd_notEquals">两次密码不一致</string>
+    <string name="ok">确定</string>
     <string name="url_login"><![CDATA[http://192.168.1.101:82/WebApi/api/Sys_Login/LoginValidate?name=01177950&pwd=123]]></string>
 </resources>
